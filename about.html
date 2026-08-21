@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Mad Martian Studios</title>
+    
+    <!-- Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --bg-color: #0a080d;
+            --card-bg: #14101a;
+            --card-border: #2a2035;
+            /* Martian Orange Palette */
+            --accent-color: #ff6b35;
+            --accent-hover: #ff8552;
+            --accent-glow: rgba(255, 107, 53, 0.25);
+            --text-main: #f5f0f8;
+            --text-muted: #a398b0;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* NAVIGATION BAR */
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 35px;
+            background: rgba(10, 8, 13, 0.85);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--card-border);
+        }
+
+        .nav-brand {
+            font-weight: 800;
+            font-size: 19px;
+            letter-spacing: 0.5px;
+            color: var(--text-main);
+            text-decoration: none;
+        }
+
+        .nav-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            margin-left: 24px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: color 0.2s ease;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--accent-hover);
+        }
+
+        /* HEADER / HERO */
+        header {
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: radial-gradient(circle at 50% 15%, #2b141d 0%, var(--bg-color) 70%);
+        }
+
+        .logo-small {
+            width: 240px;
+            max-width: 80%;
+            height: auto;
+            display: block;
+            margin: 0 auto 20px;
+            filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.25));
+            transition: transform 0.3s ease;
+        }
+
+        .logo-small:hover {
+            transform: scale(1.02);
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+            font-size: 36px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+
+        header p {
+            margin: 0;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 40px 20px 90px;
+        }
+
+        /* MAIN ABOUT CONTENT */
+        .content-card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 45px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            margin-bottom: 40px;
+        }
+
+        .content-card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 16px;
+            color: var(--accent-hover);
+        }
+
+        .content-card p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin-top: 0;
+            margin-bottom: 24px;
+        }
+
+        .content-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* FEATURES / VALUES GRID */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .grid-item {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 20px;
+        }
+
+        .grid-item h3 {
+            margin: 0 0 8px;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .grid-item p {
+            margin: 0;
+            font-size: 14px;
+            color: var(--text-muted);
+        }
+
+        /* CALL TO ACTION */
+        .cta-box {
+            text-align: center;
+            padding: 40px 20px;
+            background: radial-gradient(circle, #1a1222 0%, var(--card-bg) 100%);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+        }
+
+        .cta-box h3 {
+            margin: 0 0 12px;
+            font-size: 22px;
+            font-weight: 700;
+        }
+
+        .cta-box p {
+            color: var(--text-muted);
+            margin: 0 0 24px;
+            font-size: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 13px 28px;
+            border-radius: 12px;
+            background: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 15px;
+            transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px var(--accent-glow);
+        }
+
+        .button:hover {
+            background: var(--accent-hover);
+            transform: translateY(-2px);
+        }
+
+        /* FOOTER */
+        footer {
+            text-align: center;
+            padding: 35px 20px;
+            border-top: 1px solid var(--card-border);
+            color: var(--text-muted);
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .content-card {
+                padding: 30px 20px;
+            }
+
+            header h1 {
+                font-size: 28px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <a href="index.html" class="nav-brand">Mad Martian Studios</a>
+        <div class="nav-links">
+            <a href="projects.html">Projects</a>
+            <a href="about.html" class="active">About</a>
+        </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header>
+        <a href="index.html">
+            <img src="Mad-Martian-Studios.PNG" alt="Mad Martian Studios Logo" class="logo-small">
+        </a>
+        <h1>About Us</h1>
+        <p>Purpose-built software engineered for real-world impact.</p>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="container">
+
+        <!-- MISSION SECTION -->
+        <div class="content-card">
+            <h2>Our Mission</h2>
+            <p>
+                At Mad Martian Studios, we focus on engineering focused, practical applications that eliminate operational friction. Built around real workflows in logistics, maintenance, and fleet management, our software converts complex data into fast, clear answers on the ground.
+            </p>
+            <p>
+                We believe software should step out of the way of the user—delivering utility directly where work happens without unnecessary bloat or steep learning curves.
+            </p>
+
+            <div class="grid">
+                <div class="grid-item">
+                    <h3>Direct Utility</h3>
+                    <p>Designed for fast execution and immediate productivity on mobile and desktop.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Operational Focus</h3>
+                    <p>Tailored directly to field inspections, part tracking, and inventory catalogs.</p>
+                </div>
+                <div class="grid-item">
+                    <h3>Reliable Speed</h3>
+                    <p>Built light and dependable to ensure critical data is always accessible.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- CALL TO ACTION -->
+        <div class="cta-box">
+            <h3>Explore Our Applications</h3>
+            <p>Check out our growing suite of maintenance and inventory management tools.</p>
+            <a href="projects.html" class="button">View Projects</a>
+        </div>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        &copy; 2026 Mad Martian Studios. All rights reserved.
+    </footer>
+
+</body>
+</html>
