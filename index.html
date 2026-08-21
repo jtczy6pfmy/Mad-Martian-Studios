@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | Mad Martian Studios</title>
+    <title>Mad Martian Studios</title>
     
     <!-- Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,7 @@
             --bg-color: #0a080d;
             --card-bg: #14101a;
             --card-border: #2a2035;
+            /* Martian Orange Palette */
             --accent-color: #ff6b35;
             --accent-hover: #ff8552;
             --accent-glow: rgba(255, 107, 53, 0.25);
@@ -76,135 +77,96 @@
         /* HEADER / HERO */
         header {
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 100px 20px 80px;
             background: radial-gradient(circle at 50% 15%, #2b141d 0%, var(--bg-color) 70%);
         }
 
-        .logo-small {
-            width: 240px;
-            max-width: 80%;
+        .logo {
+            width: 480px;
+            max-width: 90%;
             height: auto;
             display: block;
-            margin: 0 auto 20px;
-            filter: drop-shadow(0 8px 20px rgba(255, 107, 53, 0.25));
+            margin: 0 auto 30px;
+            filter: drop-shadow(0 12px 30px rgba(255, 107, 53, 0.28));
+            transition: transform 0.3s ease;
         }
 
-        header h1 {
-            margin: 0 0 10px;
-            font-size: 36px;
-            font-weight: 800;
-            letter-spacing: -0.5px;
+        .logo:hover {
+            transform: scale(1.02);
         }
 
         header p {
-            margin: 0;
-            font-size: 18px;
-            font-weight: 600;
-            color: var(--text-muted);
-        }
-
-        /* CONTAINER & LAYOUT */
-        .container {
-            max-width: 1100px;
-            margin: auto;
-            padding: 40px 20px 90px;
-        }
-
-        /* APP CARDS GRID */
-        .apps {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .app-card {
-            position: relative;
-            background: var(--card-bg);
-            border: 1px solid var(--card-border);
-            border-radius: 20px;
-            padding: 38px 28px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
-        }
-
-        .app-card:hover {
-            transform: translateY(-6px);
-            border-color: var(--accent-color);
-            box-shadow: 0 15px 35px var(--accent-glow);
-        }
-
-        .badge {
-            position: absolute;
-            top: 18px;
-            right: 18px;
-            font-size: 11px;
-            text-transform: uppercase;
+            margin: 0 0 35px;
+            font-size: 24px;
             font-weight: 700;
-            letter-spacing: 0.6px;
-            padding: 4px 10px;
-            border-radius: 20px;
-            background: var(--accent-glow);
-            color: var(--accent-hover);
-            border: 1px solid rgba(255, 107, 53, 0.4);
-        }
-
-        .badge.muted {
-            background: rgba(255, 255, 255, 0.05);
             color: var(--text-muted);
-            border-color: rgba(255, 255, 255, 0.1);
+            letter-spacing: -0.2px;
         }
 
-        .app-icon {
-            font-size: 52px;
-            margin-bottom: 15px;
-            line-height: 1;
-        }
-
-        .app-card h3 {
-            margin: 10px 0;
-            font-size: 22px;
-            font-weight: 700;
-        }
-
-        .app-card p {
-            color: var(--text-muted);
-            font-size: 15px;
-            margin-bottom: 28px;
-            flex-grow: 1;
-        }
-
-        .button {
+        .cta-button {
             display: inline-block;
-            width: 100%;
-            padding: 13px 20px;
+            padding: 14px 32px;
             border-radius: 12px;
             background: var(--accent-color);
             color: #ffffff;
             text-decoration: none;
             font-weight: 700;
-            font-size: 15px;
+            font-size: 16px;
+            box-shadow: 0 4px 20px var(--accent-glow);
             transition: background 0.2s ease, transform 0.2s ease;
-            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
-        .button:hover {
+        .cta-button:hover {
             background: var(--accent-hover);
-            transform: translateY(-1px);
+            transform: translateY(-2px);
         }
 
-        .coming-soon {
-            opacity: 0.75;
-            background: rgba(20, 16, 26, 0.5);
+        /* CONTAINER & LAYOUT */
+        .container {
+            max-width: 900px;
+            margin: auto;
+            padding: 20px 20px 90px;
         }
 
-        .coming-soon:hover {
-            transform: none;
-            border-color: var(--card-border);
+        /* ABOUT HIGHLIGHT SECTION */
+        .about-card {
+            text-align: center;
+            padding: 45px 35px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            border: 1px solid var(--card-border);
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .about-card h2 {
+            font-size: 26px;
+            font-weight: 700;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .about-card p {
+            color: var(--text-muted);
+            font-size: 16px;
+            margin: 0 0 25px;
+        }
+
+        .secondary-button {
+            display: inline-block;
+            padding: 10px 22px;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-main);
+            border: 1px solid var(--card-border);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: border-color 0.2s ease, background 0.2s ease;
+        }
+
+        .secondary-button:hover {
+            border-color: var(--accent-color);
+            background: rgba(255, 107, 53, 0.1);
         }
 
         /* FOOTER */
@@ -221,8 +183,16 @@
                 padding: 15px 20px;
             }
 
-            header h1 {
-                font-size: 28px;
+            header {
+                padding: 60px 15px 45px;
+            }
+
+            .logo {
+                width: 340px;
+            }
+
+            header p {
+                font-size: 19px;
             }
         }
     </style>
@@ -234,62 +204,29 @@
     <nav>
         <a href="index.html" class="nav-brand">Mad Martian Studios</a>
         <div class="nav-links">
-            <a href="projects.html" class="active">Projects</a>
-            <a href="index.html#about">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="about.html">About</a>
         </div>
     </nav>
 
-    <!-- HEADER -->
+    <!-- HEADER / HERO -->
     <header>
-        <a href="index.html">
-            <img src="Mad-Martian-Studios.PNG" alt="Mad Martian Studios Logo" class="logo-small">
-        </a>
-        <h1>Our Projects</h1>
-        <p>Explore practical applications developed by Mad Martian Studios.</p>
+        <img src="Mad-Martian-Studios.PNG" alt="Mad Martian Studios Logo" class="logo">
+        <p>Practical Apps. Real-World Solutions.</p>
+        <a href="projects.html" class="cta-button">View Our Projects</a>
     </header>
 
     <!-- MAIN CONTENT -->
     <main class="container">
 
-        <div class="apps">
-
-            <!-- CHASSIS PARTS INVENTORY -->
-            <div class="app-card">
-                <span class="badge">Live</span>
-                <div class="app-icon">🔧</div>
-                <h3>Chassis Parts Inventory</h3>
-                <p>
-                    Search chassis parts and quickly find detailed specifications, part numbers, and availability from the active catalog.
-                </p>
-                <a class="button" href="chassis-inventory/index.html" target="_blank" rel="noopener noreferrer">
-                    Open Application
-                </a>
-            </div>
-
-            <!-- EOD INSPECTION APP -->
-            <div class="app-card">
-                <span class="badge">Live</span>
-                <div class="app-icon">📋</div>
-                <h3>EOD Inspection App</h3>
-                <p>
-                    Track inspections, document defects, monitor containers and chassis racks, and generate end-of-day compliance reports.
-                </p>
-                <a class="button" href="eod-inspection/index.html" target="_blank" rel="noopener noreferrer">
-                    Open Application
-                </a>
-            </div>
-
-            <!-- MORE APPS -->
-            <div class="app-card coming-soon">
-                <span class="badge muted">Soon</span>
-                <div class="app-icon">🚀</div>
-                <h3>More Apps Coming Soon</h3>
-                <p>
-                    New logistics, maintenance, and productivity tools are currently under active development.
-                </p>
-            </div>
-
-        </div>
+        <!-- ABOUT SECTION -->
+        <section class="about-card">
+            <h2>Streamlining Everyday Workflows</h2>
+            <p>
+                Mad Martian Studios develops targeted applications designed to eliminate manual bottlenecks, streamline field inspections, and make inventory management faster and more reliable.
+            </p>
+            <a href="about.html" class="secondary-button">Learn More About Us &rarr;</a>
+        </section>
 
     </main>
 
