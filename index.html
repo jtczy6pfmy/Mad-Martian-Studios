@@ -12,13 +12,15 @@
 
     <style>
         :root {
-            --bg-color: #0b0b12;
-            --card-bg: #151522;
-            --card-border: #28283d;
-            --accent-color: #6c5ce7;
-            --accent-hover: #8577f0;
-            --text-main: #f0f0f8;
-            --text-muted: #9e9eb4;
+            --bg-color: #0a080d;
+            --card-bg: #14101a;
+            --card-border: #2a2035;
+            /* Martian Orange Palette */
+            --accent-color: #ff6b35;
+            --accent-hover: #ff8552;
+            --accent-glow: rgba(255, 107, 53, 0.25);
+            --text-main: #f5f0f8;
+            --text-muted: #a398b0;
         }
 
         * {
@@ -45,15 +47,15 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 30px;
-            background: rgba(11, 11, 18, 0.85);
+            padding: 18px 35px;
+            background: rgba(10, 8, 13, 0.85);
             backdrop-filter: blur(12px);
             border-bottom: 1px solid var(--card-border);
         }
 
         .nav-brand {
-            font-weight: 700;
-            font-size: 18px;
+            font-weight: 800;
+            font-size: 19px;
             letter-spacing: 0.5px;
             color: var(--text-main);
             text-decoration: none;
@@ -62,7 +64,7 @@
         .nav-links a {
             color: var(--text-muted);
             text-decoration: none;
-            margin-left: 20px;
+            margin-left: 24px;
             font-size: 14px;
             font-weight: 600;
             transition: color 0.2s ease;
@@ -75,38 +77,44 @@
         /* HEADER / HERO */
         header {
             text-align: center;
-            padding: 80px 20px 60px;
-            background: radial-gradient(circle at 50% 20%, #1f1b3e 0%, var(--bg-color) 70%);
+            padding: 100px 20px 70px;
+            background: radial-gradient(circle at 50% 15%, #2b141d 0%, var(--bg-color) 70%);
         }
 
         .logo {
-            width: 320px;
-            max-width: 85%;
+            width: 480px;
+            max-width: 90%;
             height: auto;
             display: block;
-            margin: 0 auto 25px;
-            filter: drop-shadow(0 10px 20px rgba(108, 92, 231, 0.15));
+            margin: 0 auto 30px;
+            filter: drop-shadow(0 12px 30px rgba(255, 107, 53, 0.28));
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.02);
         }
 
         header p {
             margin: 0;
-            font-size: 22px;
-            font-weight: 600;
+            font-size: 24px;
+            font-weight: 700;
             color: var(--text-muted);
+            letter-spacing: -0.2px;
         }
 
         /* CONTAINER & LAYOUT */
         .container {
             max-width: 1100px;
             margin: auto;
-            padding: 40px 20px 80px;
+            padding: 50px 20px 90px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 32px;
+            font-size: 34px;
             font-weight: 800;
-            margin: 0 0 40px;
+            margin: 0 0 45px;
             letter-spacing: -0.5px;
         }
 
@@ -122,34 +130,34 @@
             background: var(--card-bg);
             border: 1px solid var(--card-border);
             border-radius: 20px;
-            padding: 35px 25px;
+            padding: 38px 28px;
             display: flex;
             flex-direction: column;
             align-items: center;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
             transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
         }
 
         .app-card:hover {
             transform: translateY(-6px);
             border-color: var(--accent-color);
-            box-shadow: 0 15px 35px rgba(108, 92, 231, 0.2);
+            box-shadow: 0 15px 35px var(--accent-glow);
         }
 
         .badge {
             position: absolute;
-            top: 15px;
-            right: 15px;
+            top: 18px;
+            right: 18px;
             font-size: 11px;
             text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.6px;
             padding: 4px 10px;
             border-radius: 20px;
-            background: rgba(108, 92, 231, 0.2);
+            background: var(--accent-glow);
             color: var(--accent-hover);
-            border: 1px solid rgba(108, 92, 231, 0.3);
+            border: 1px solid rgba(255, 107, 53, 0.4);
         }
 
         .badge.muted {
@@ -159,7 +167,7 @@
         }
 
         .app-icon {
-            font-size: 50px;
+            font-size: 52px;
             margin-bottom: 15px;
             line-height: 1;
         }
@@ -173,46 +181,48 @@
         .app-card p {
             color: var(--text-muted);
             font-size: 15px;
-            margin-bottom: 25px;
+            margin-bottom: 28px;
             flex-grow: 1;
         }
 
         .button {
             display: inline-block;
             width: 100%;
-            padding: 12px 20px;
+            padding: 13px 20px;
             border-radius: 12px;
             background: var(--accent-color);
-            color: white;
+            color: #ffffff;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             font-size: 15px;
             transition: background 0.2s ease, transform 0.2s ease;
+            box-shadow: 0 4px 15px var(--accent-glow);
         }
 
         .button:hover {
             background: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         .coming-soon {
             opacity: 0.75;
-            background: rgba(21, 21, 34, 0.5);
+            background: rgba(20, 16, 26, 0.5);
         }
 
         .coming-soon:hover {
             transform: none;
             border-color: var(--card-border);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
         }
 
         /* ABOUT SECTION */
         .about {
             margin-top: 100px;
             text-align: center;
-            max-width: 700px;
+            max-width: 720px;
             margin-left: auto;
             margin-right: auto;
-            padding: 40px;
+            padding: 45px 35px;
             background: var(--card-bg);
             border-radius: 20px;
             border: 1px solid var(--card-border);
@@ -234,7 +244,7 @@
         /* FOOTER */
         footer {
             text-align: center;
-            padding: 30px 20px;
+            padding: 35px 20px;
             border-top: 1px solid var(--card-border);
             color: var(--text-muted);
             font-size: 14px;
@@ -246,19 +256,19 @@
             }
 
             header {
-                padding: 50px 15px 40px;
+                padding: 60px 15px 45px;
             }
 
             .logo {
-                width: 240px;
+                width: 340px;
             }
 
             header p {
-                font-size: 18px;
+                font-size: 19px;
             }
 
             .section-title {
-                font-size: 26px;
+                font-size: 28px;
             }
         }
     </style>
@@ -277,7 +287,6 @@
 
     <!-- HEADER -->
     <header>
-        <!-- Exact file name and extension matched -->
         <img src="Mad-Martian-Studios.PNG" alt="Mad Martian Studios Logo" class="logo">
         <p>Practical Apps. Real-World Solutions.</p>
     </header>
@@ -297,7 +306,7 @@
                 <p>
                     Search chassis parts and quickly find detailed specifications, part numbers, and availability from the active catalog.
                 </p>
-                <a class="button" href="#" target="_blank" rel="noopener noreferrer">
+                <a class="button" href="chassis-inventory/index.html" target="_blank" rel="noopener noreferrer">
                     Open Application
                 </a>
             </div>
@@ -310,7 +319,7 @@
                 <p>
                     Track inspections, document defects, monitor containers and chassis racks, and generate end-of-day compliance reports.
                 </p>
-                <a class="button" href="#" target="_blank" rel="noopener noreferrer">
+                <a class="button" href="eod-inspection/index.html" target="_blank" rel="noopener noreferrer">
                     Open Application
                 </a>
             </div>
